@@ -3,6 +3,7 @@
   animation-name: top;
   animation-duration: 2.3s;
   animation-fill-mode: forwards;
+   /*make infinite iteration-count for a infinite loop, define transition, set timing, and change animation-direction*/
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -14,6 +15,7 @@
   animation-name: middle;
   animation-duration: .5s;
   animation-fill-mode: forwards;
+   /*define transition and change animation-direction*/
   animation-direction: alternate;
   transition: 2.3s ease-in-out;
 }
@@ -23,13 +25,14 @@
   animation-name: bottom;
   animation-duration: 2.3s;
   animation-fill-mode: forwards;
+/*make infinite iteration-count for a infinite loop, define transition, set timing, and change animation-direction*/
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-delay: .75s;
   transition: 2.3s ease-in-out;
 }
-
+/* set nav-bar transition*/
 nav {
   opacity: 0;
   transition-duration: 2s;
@@ -39,7 +42,7 @@ nav {
 .hamburger:hover ~ nav {
   opacity: 1;
 }
-
+/*Define animation keyframes with partial states to add an extra movement to the animation*/ 
 @keyframes top {
   20%{transform: rotateX(90deg)}
   40% {transform: rotate(0)}
