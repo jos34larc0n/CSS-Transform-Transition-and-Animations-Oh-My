@@ -1,1 +1,47 @@
+/*define button gradient's initial state; and z-index = 1 to make it overlap with ::before and final gradient's state*/
+.gradient {
+    position: relative;
+    background-image: linear-gradient(
+      to right,
+      hsl(263, 79.2%, 66.1%),
+      hsl(322, 79.2%, 66.1%)
+    );
+    z-index: 1;
+  }
+  /*Define the gradient's final state; set ::before element position as absolute and set top, right, bottom, and left = 0; Set z-index = -1; this will overlap both gradients states into the button.*/
+  .gradient::before {
+    color: antiquewhite;
+    position: absolute;
+/* set content as an empty string; this will append the final gradient's state element into the button container*/
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(
+      to left,
+      hsl(219, 71.2%, 66.1%),
+      rgb(108, 100, 255)
+    );
+    z-index: -1;
+ /*Declare a transition using the opacity property to make a fade transition between gradients*/
+    transition: opacity 0.85s linear;
+    opacity: 0;
+  }
+  /* Declare the final opacity on hover for before element to display the desired gradient's final state.*/
+  .gradient:hover::before {
+    opacity: 1;
+  }
+  .gradient:hover{
+    color: whitesmoke;
+    transition: 1.5s;
+  }
+/*image size transition*/
+img{
+    transition: 1.5s ease-in-out;
+
+}
+img:hover{
+    width: 900px;
+}
 
