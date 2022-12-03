@@ -36,12 +36,66 @@
     color: whitesmoke;
     transition: 1.5s;
   }
-/*image size transition*/
-img{
-    transition: 1.5s ease-in-out;
 
+/*BONUS*/
+/* set position to relative and justify content*/
+.caption {
+  position: relative;
+  overflow:hidden;
+  justify-content: left;
 }
-img:hover{
-    width: 900px;
+/* move conatiner up on hover */
+.caption:hover .caption-overlay {
+  transform: translateY(15%);
 }
 
+/* set the h1 element to be visible always */
+.caption h1 {
+  text-align: left;
+  padding-bottom: 40px;
+  margin: 0;
+  transform: translateY(calc(-100% - 5px));
+  transition: transform 1.5s ease-in-out;
+  font-family: 'Audiowide', cursive;
+ }
+ 
+/* set ::before element transparent on an empty string positon absolute; left, right, top, bottom = 0.*/
+.caption::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* allow background to darken for better text visibility */
+.caption:hover::before {
+  background: rgba(0, 0, 0, .2);
+}
+
+/* image size and transition*/
+.caption img {
+  width: 100%;
+  height: auto;
+  transition: 1.5s ease-in-out;
+  z-index: -1;
+  position: relative;
+}
+/*set caption overlay translate to the bottom set transition*/
+.caption-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  color: white;
+  transform: translateY(100%);
+  transition: transform 1.5s ease-in-out;
+}
+
+/* move the h1 on hover as well */
+.caption:hover h1 {
+  transform: translateY(0);
+}
